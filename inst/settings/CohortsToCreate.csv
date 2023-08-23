@@ -1,19 +1,19 @@
 cohort_id,cohort_name
-899,mHSPC ADT only
-900,mHSPC ADT plus abiraterone
-901,mHSPC ADT plus enzalutamide
-902,mHSPC ADT plus apalutamide
-903,mHSPC ADT plus darolutamide
-904,mHSPC ADT plus docetaxel
-906,mHSPC ADT plus abiraterone plus docetaxel
-907,mHSPC ADT plus enzalutamide plus docetaxel
-908,mHSPC ADT plus apalutamide plus docetaxel
-909,mHSPC ADT plus datolutamide plus docetaxel
+939,mHSPC ADT only
+940,mHSPC ADT plus abiraterone
+941,mHSPC ADT plus enzalutamide
+942,mHSPC ADT plus apalutamide
+951,mHSPC ADT plus darolutamide
+943,mHSPC ADT plus docetaxel
+944,mHSPC ADT plus abiraterone plus docetaxel
+945,mHSPC ADT plus enzalutamide plus docetaxel
+946,mHSPC ADT plus apalutamide plus docetaxel
+947,mHSPC ADT plus datolutamide plus docetaxel
 948,Sensitivity Chemotherapy as a procedure
 949,Sensitivity Chemotherapy as a procedure and missing an equivalent drug record
 950,Sensitivity ADT prior use
 952,Sensitivity asses ADT missigness around ARTA use year window
-953,Sensitivity asses ADT missigness around ARTA use month widow
+953,Sensitivity asses ADT missigness around ARTA use one month window
 869,Acute cardiac event
 853,Alopecia
 870,Bone marrow suppression
@@ -30,11 +30,8 @@ cohort_id,cohort_name
 887,Sepsis
 889,Kidney failure
 813,Neuropathy
-855,Rash
+855,Rash & pruritus
 890,Seizures
 833,Skeletally related events
 891,Thromboembolism
-896,Abnormal hepatic function (episodic)
-917,Abnormal hepatic function (chronic)
-866,Kidney failure (chronic)
-857,Kidney failure (episodic)
+896,Abnormal hepatic function
