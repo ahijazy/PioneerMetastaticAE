@@ -19,6 +19,7 @@ Imports:
   checkmate,
   clock,
   digest,
+  reda,
   dplyr (>= 1.0.0),
   methods,
   survival,
