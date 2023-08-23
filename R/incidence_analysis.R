@@ -39,7 +39,7 @@
 #'                                            provide a schema with write privileges where temp tables
 #'                                            can be created.
 #' @param verifyDependencies                  Check whether correct package versions are installed?
-#' @param outputFolderoutputFolderIR                        Name of local folder to place results; make sure to use
+#' @param outputFolderoutputFolderIR          Name of local folder to place results; make sure to use
 #'                                            forward slashes (/). Do not use a folder on a network
 #'                                            drive since this greatly impacts performance.
 #' @param databaseId                          A short string for identifying the database (e.g.
@@ -53,14 +53,16 @@ execute_IR <- function(connectionDetails,
                        tempEmulationSchema = getOption("sqlRenderTempEmulationSchema"),
                        outputFolder,
                        databaseId = databaseId,
-					   outputFolderIR) 
+					   outputFolderIR=outputFolderIR) 
 {
 # the csv where the analysis settings are
 IRsettings = read.csv("./inst/settings/IRsettings.csv")
-
+##########################################################################################
+##########################################################################################
+##########################################################################################
 # first get all the sql
 #all outcomes
-sql_all='SELECT T.COHORT_DEFINITION_ID as target_id, O.COHORT_DEFINITION_ID as outcome_id, T.SUBJECT_ID ,T.COHORT_START_DATE,O.COHORT_START_DATE as OUTCOME_START_DATE,T.COHORT_END_DATE, p.YEAR_OF_BIRTH
+sql_all_outcomes='SELECT T.COHORT_DEFINITION_ID as target_id, O.COHORT_DEFINITION_ID as outcome_id, T.SUBJECT_ID ,T.COHORT_START_DATE,O.COHORT_START_DATE as OUTCOME_START_DATE,T.COHORT_END_DATE, p.YEAR_OF_BIRTH
 FROM @cohortDatabaseSchema.@cohortTable T
 JOIN @cohortDatabaseSchema.@cohortTable O ON T.subject_id = O.subject_id
 JOIN @cdmDatabaseSchema.person p ON T.subject_id = p.person_id
@@ -68,9 +70,11 @@ WHERE T.cohort_definition_id = @target_id
   AND O.cohort_definition_id = @outcome_id
   AND O.cohort_start_date >= T.cohort_start_date
   AND O.cohort_end_date <= T.cohort_end_date'
-
+##########################################################################################
+##########################################################################################
+##########################################################################################
 #first outcome during after target
-sql_outcome='SELECT T.COHORT_DEFINITION_ID as target_id, O.COHORT_DEFINITION_ID as outcome_id, T.SUBJECT_ID ,T.COHORT_START_DATE,O.COHORT_START_DATE as OUTCOME_START_DATE,T.COHORT_END_DATE, p.YEAR_OF_BIRTH
+sql_first_outcome='SELECT T.COHORT_DEFINITION_ID as target_id, O.COHORT_DEFINITION_ID as outcome_id, T.SUBJECT_ID ,T.COHORT_START_DATE,O.COHORT_START_DATE as OUTCOME_START_DATE,T.COHORT_END_DATE, p.YEAR_OF_BIRTH
 FROM @cohortDatabaseSchema.@cohortTable T
 JOIN @cohortDatabaseSchema.@cohortTable O ON T.subject_id = O.subject_id
 JOIN @cdmDatabaseSchema.person p ON T.subject_id = p.person_id
@@ -81,18 +85,23 @@ WHERE T.cohort_definition_id = @target_id
     SELECT MIN(cohort_start_date)
     FROM @cohortDatabaseSchema.@cohortTable
     WHERE subject_id = O.subject_id
-      AND O.cohort_definition_id = @outcome_id
-      AND O.cohort_start_date >= T.cohort_start_date
-      AND O.cohort_end_date <= T.cohort_end_date
+      AND cohort_definition_id = @outcome_id
+      AND cohort_start_date >= T.cohort_start_date
+      AND cohort_end_date <= T.cohort_end_date
   )'
-
-# target
+##########################################################################################
+##########################################################################################
+##########################################################################################
+# All the target population 
 sql_target ='SELECT T.COHORT_DEFINITION_ID as target_id, T.SUBJECT_ID,T.COHORT_START_DATE,T.COHORT_END_DATE,p.YEAR_OF_BIRTH
 FROM @cohortDatabaseSchema.@cohortTable T 
 JOIN @cdmDatabaseSchema.person p ON T.subject_id = p.person_id 
-AND T.COHORT_DEFINITION_ID=@target_id'
+WHERE T.COHORT_DEFINITION_ID=@target_id'
 
-### Sql translation and data preparation
+##########################################################################################
+##########################################################################################
+##########################################################################################
+### 
 #takes in the sql, target id and outcome id as input
 sql_translate_ae=function(sql,target_id,outcome_id)
 {
@@ -104,7 +113,10 @@ sql_rendered= SqlRender::render(sql,
 				  outcome_id=outcome_id)
 return(SqlRender::translate(sql_rendered,targetDialect = DBMS))
 }
-#takes in Sql and target as input
+##########################################################################################
+##########################################################################################
+##########################################################################################
+#takes in Sql and target id as input 
 sql_translate_target=function(sql,target_id)
 {
 sql_rendered= SqlRender::render(sql,
@@ -114,35 +126,87 @@ sql_rendered= SqlRender::render(sql,
 				  target_id=target_id)
 return(SqlRender::translate(sql_rendered,targetDialect = DBMS))
 }
-###
-#takes in translated and rendered SQL as input
+#Connection details
 conn=DatabaseConnector::connect(connectionDetails)
+##########################################################################################
+##########################################################################################
+##########################################################################################
+#takes in translated and rendered SQL as input and gives the data from a connection
 get_data=function(sql)
 {
 suppressMessages(as.data.frame(DatabaseConnector::querySql(conn,sql)))
 }
-###
-
-
-episodic_events=function(outcome)
+##########################################################################################
+##########################################################################################
+##########################################################################################
+episodic_prep=function(target,outcome)
 {
-time_to_event=as.numeric(difftime(outcome$OUTCOME_START_DATE, outcome$COHORT_START_DATE, units = "days"))/365.25
-cbind(outcome,time_to_event)
-outcome <-outcome %>%
-arrange(SUBJECT_ID, time_to_event)
-summary_data <- outcome %>%
-  group_by(SUBJECT_ID,TARGET_ID,OUTCOME_ID) %>%
-  summarise(count_of_events = n(),
-            mean_time_between_events = ifelse(n() > 1, mean(diff(time_to_event)), NA))
-			
- csv_file <- paste0( outputFolderIR, "/episodic_events.csv")
-     		if (file.exists(csv_file)) {
-			write.table(summary_data, csv_file, sep = ",", col.names = FALSE, row.names = FALSE, append = TRUE)
-			} else 	{
-			write.table(summary_data, csv_file, sep = ",", col.names = TRUE, row.names = FALSE)
-				}
+  suppressMessages(
+ df_target <-data.frame(  (data.frame(target_id       = target$TARGET_ID) %>%
+                  mutate(subject_id        = target$SUBJECT_ID,
+                         age_at_index_T    = lubridate::year(target$COHORT_START_DATE) - target$YEAR_OF_BIRTH,
+                         follow_up_years   = as.numeric(difftime( target$COHORT_END_DATE, target$COHORT_START_DATE, units = "days"))/365.25,
+                         index_year_target = lubridate::year(target$COHORT_START_DATE)) %>% 
+                  group_by(target_id, subject_id, age_at_index_T, index_year_target) %>%
+                  summarise(follow_up_time = sum(follow_up_years)))))
+
+  
+ df_ae <- (mutate(outcome,
+                   outcome_id             = outcome$OUTCOME_ID,
+                   subject_id             = outcome$SUBJECT_ID,
+                   age_at_index_T         = lubridate::year(outcome$COHORT_START_DATE) - outcome$YEAR_OF_BIRTH,
+                   time_to_outcome_years  = as.numeric(difftime(outcome$OUTCOME_START_DATE, outcome$COHORT_START_DATE, units = "days"))/365.25,
+                   index_year_target      = lubridate::year(outcome$COHORT_START_DATE)))
+
+df_ae_1=data.frame(cbind(	df_ae$TARGET_ID,
+							df_ae$OUTCOME_ID,
+							df_ae$SUBJECT_ID,
+							df_ae$age_at_index_T,
+							df_ae$index_year_target,
+							df_ae$time_to_outcome_years))		
+names(df_ae_1)=c("target_id","outcome_id","subject_id","Age_Group","Year","time")
+event=1
+df_ae_1=cbind(df_ae_1,event)
+OUTCOME_ID=unique(df_ae_1$outcome_id)
+df_target=cbind(df_target,OUTCOME_ID)
+df_o_1=data.frame(cbind(df_target$target_id ,
+						df_target$OUTCOME_ID,
+						df_target$subject_id ,
+						df_target$age_at_index_T,
+						df_target$index_year_target,
+						df_target$follow_up_time ))
+names(df_o_1)=c("target_id","outcome_id","subject_id","Age_Group","Year","time")
+event=0
+df_o_1=cbind(df_o_1,event)
+df=data.frame(rbind(df_o_1, df_ae_1))
+df$Age_Group= cut(df$Age_Group, breaks = c(18,55,70,80,120))
+return(df)
 }
 
+##########################################################################################
+##########################################################################################
+##########################################################################################
+
+episodic_events=function(df)
+{
+ df=df[df$event==1,]
+ df <-df %>%
+arrange(subject_id, time)
+suppressMessages(
+summary_data <- df %>%
+  group_by(subject_id,target_id ,outcome_id,Age_Group,Year) %>%
+  summarise(count_of_events = n(),
+  mean_time_between_events = ifelse(count_of_events > 1, mean(diff(time)), NA))%>%
+  group_by (target_id ,outcome_id,Age_Group,Year)%>%
+  summarise(total_num_events=sum(count_of_events),
+			avg_number_of_events= mean(count_of_events),
+			conditional_mean_time_between_events= mean(mean_time_between_events, na.rm = TRUE)))
+ return(as.data.frame(summary_data))
+}
+##########################################################################################
+##########################################################################################
+##########################################################################################
+#data preparation for non episodic events
 data_prep <- function(ae, target){
   # Create a table for the first adverse event
   df_ae <- data.frame(target_id = ae$TARGET_ID)
@@ -178,7 +242,11 @@ data_prep <- function(ae, target){
   
   return(as.data.frame(df_comb))
 }
-####
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+
 # cut and aggregate data
 cut_and_aggregate = function(df, breaks_age = c(55, 70, 80)){	
   break_points_age  <- c(18, breaks_age, Inf) 
@@ -201,36 +269,103 @@ cut_and_aggregate = function(df, breaks_age = c(55, 70, 80)){
   res$outcome_id <- out_id
   return(as.data.frame(res))
 }
-  
+
+##########################################################################################
+##########################################################################################
+##########################################################################################
+# write function
+# appends to table (csv) if the file exist and creates it if not
+{
+write_table=function(object,csv_file)
+if (file.exists(csv_file)) {
+		  write.table(object, csv_file, sep = ",", col.names = FALSE, row.names = FALSE, append = TRUE)
+		} else 	{
+		  write.table(object, csv_file, sep = ",", col.names = TRUE, row.names = FALSE)
+				}     
+}
+##########################################################################################
+##########################################################################################
+##########################################################################################
+  cohort_id_target	=numeric(0)
+  cohort_id_outcome	=numeric(0)
+  target_count		=numeric(0)
+  outcome_count		=numeric(0)
+  chronic			=numeric(0)
+  episodic			=numeric(0)
+  df_counts= data.frame(cohort_id_target,cohort_id_outcome,target_count,outcome_count,chronic,episodic)
   target_id  <- unique(IRsettings$target_id)
   outcome_id <- unique(IRsettings$outcome_id)
   total_iterations <- nrow(IRsettings)
-
-  for(i in 1:length(target_id)){
+  counter1=0   #counter for chronic  events
+  counter2=0   #counter for episodic events
+  s1=NULL
+  s1_age=NULL
+  s2=NULL
+  s2_age=NULL
+  mcf1=NULL
+  mcf1_age=NULL
+for(i in 1:length(target_id)){
     target <- sql_translate_target(sql = sql_target, target_id = target_id[i]) %>% get_data
+	
 	if(nrow(target)==0)
 	{
 	print(paste("No data for cohort:", target_id[i]))
+	OutcomeList=IRsettings[IRsettings$target_id==target_id[i],]
+	empty_df=data.frame(	cohort_id_target	=OutcomeList$target_id,
+					cohort_id_outcome	=OutcomeList$outcome_id ,
+					target_count		=0,
+					outcome_count		=0,
+					chronic				=OutcomeList$chronic,
+					episodic			=OutcomeList$episodic)
+	df_counts=rbind(df_counts,empty_df)
 	next
 	}
 	OutcomeList=IRsettings[IRsettings$target_id==target_id[i],]
-    for(j in 1:nrow(OutcomeList))
+	for(j in 1:nrow(OutcomeList))
 	{
-	  iteration_number <- (i - 1) * nrow(OutcomeList) + j
-      if(OutcomeList$chronic[j]==1)
+		if(OutcomeList$chronic[j]==1)
 		{
-           outcome <- sql_translate_ae(sql = sql_outcome,target_id=target_id[i], outcome_id = OutcomeList$outcome_id[j]) %>% get_data
-		   
+           outcome <- sql_translate_ae(sql = sql_first_outcome,target_id=target_id[i], outcome_id = OutcomeList$outcome_id[j]) %>% get_data
 		   if(nrow(outcome)==0)
 			{
-			print(paste("No outcomes for cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
-			next
+				print(paste("No outcomes for cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
+				row=data.frame(	cohort_id_target	=target_id[i],
+						cohort_id_outcome	=OutcomeList$outcome_id[j] ,
+						target_count		=nrow(target),
+						outcome_count		=0,
+						chronic				=OutcomeList$chronic[j],
+						episodic			=OutcomeList$episodic[j])
+				df_counts=rbind(df_counts,row)
+				next
 			}
-			print(paste( " Calculating incidence for target:", target_id[i],"and outcome:", OutcomeList$outcome_id[j]))
-			ds <- data_prep(ae = outcome, target = target)
-
-			ds_split <- survival::survSplit(Surv(ds$studytime, ds$count) ~ 1, data = ds, cut = c(0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3),zero=-0.1)
-            ds_split <- (group_by(ds_split, tstart) %>%
+		row=data.frame(	cohort_id_target	=target_id[i],
+					cohort_id_outcome	=OutcomeList$outcome_id[j] ,
+					target_count		=nrow(target),
+					outcome_count		=nrow(outcome),
+					chronic				=OutcomeList$chronic[j],
+					episodic			=OutcomeList$episodic[j])
+		df_counts=rbind(df_counts,row)
+					
+		counter1=counter1+1
+		print(paste( " Calculating incidence for target:", target_id[i],"and outcome:", OutcomeList$outcome_id[j]))
+		# Get the prepped data set
+		ds <- data_prep(ae = outcome, target = target)
+        Age_Group= cut(ds$age_at_index_T, breaks = c(18,55,70,80,120))
+	 
+	 
+		# fit Keplan-Meier Curves (overall (s1) and by age s1_age) - chronic events
+		 
+		s1[[counter1]] <- survfit(Surv(ds$studytime, ds$count) ~  1,   data = ds)
+		s1[[counter1]]$target=target_id[i]
+		s1[[counter1]]$outcome=OutcomeList$outcome_id[j]	
+		s1[[counter1]]$databaseId=databaseId
+		s1_age[[counter1]] <- survfit(Surv(ds$studytime, ds$count) ~  Age_Group,   data = ds)
+		s1_age[[counter1]]$target=target_id[i]
+		s1_age[[counter1]]$outcome=OutcomeList$outcome_id[j]	
+		s1_age[[counter1]]$databaseId=databaseId
+		# fit survival curve (daan)
+		ds_split <- survival::survSplit(Surv(ds$studytime, ds$count) ~ 1, data = ds, cut = c(0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3),zero=-0.1)
+        ds_split <- (group_by(ds_split, tstart) %>%
                          summarise(event        = sum(event), 
                                    time_at_risk = sum(tstop - tstart),
                                    n_at_risk    = n(),
@@ -238,47 +373,84 @@ cut_and_aggregate = function(df, breaks_age = c(55, 70, 80)){
 								   outcome_id=OutcomeList$outcome_id[j],
 								   databaseId=databaseId))
 								   
-          csv_file <- paste0( outputFolderIR, "/survsplit.csv")
-     		if (file.exists(csv_file)) {
-			write.table(ds_split, csv_file, sep = ",", col.names = FALSE, row.names = FALSE, append = TRUE)
-			} else 	{
-			write.table(ds_split, csv_file, sep = ",", col.names = TRUE, row.names = FALSE)
-				}     
-			}
+        csv_file <- paste0( outputFolderIR, "/survsplit.csv")
+		write_table(ds_split,csv_file)
+     	   
 		ds_ir     <- cbind(cut_and_aggregate(ds),databaseId)
 		csv_file <- paste0(outputFolderIR,"/chronic.csv")
-		if (file.exists(csv_file)) {
-		  write.table(ds_ir, csv_file, sep = ",", col.names = FALSE, row.names = FALSE, append = TRUE)
-		} else 	{
-		  write.table(ds_ir, csv_file, sep = ",", col.names = TRUE, row.names = FALSE)
-				}     
+		write_table(ds_ir,csv_file)
 		}
-		
-		
-
-	   if(OutcomeList$episodic[j]==1)
-	   
+		##############################################################################
+		##############################################################################
+		##############################################################################
+		##############################################################################
+		############################################################################## 
+        # episodic events
+		 if(OutcomeList$episodic[j]==1)
 		{
-           outcome <- sql_translate_ae(sql = sql_all,target_id=target_id[i], outcome_id = OutcomeList$outcome_id[j]) %>% get_data
+           outcome <- sql_translate_ae(sql = sql_all_outcomes,target_id=target_id[i], outcome_id = OutcomeList$outcome_id[j]) %>% get_data
 		     if(nrow(outcome)==0)
-		   {
-		   print(paste("No outcomes for cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
-		   next
-		   }
-		   episodic_events(outcome)
+			   {
+			   print(paste("No outcomes for cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
+			   
+			   row=data.frame(	cohort_id_target	=target_id[i],
+						cohort_id_outcome	=OutcomeList$outcome_id[j] ,
+						target_count		=nrow(target),
+						outcome_count		=0,
+						chronic				=OutcomeList$chronic[j],
+						episodic			=OutcomeList$episodic[j])
+				df_counts=rbind(df_counts,row)
+			   next
+			   }
+		row=data.frame(	cohort_id_target	=target_id[i],
+					cohort_id_outcome	=OutcomeList$outcome_id[j] ,
+					target_count		=nrow(target),
+					outcome_count		=nrow(outcome),
+					chronic				=OutcomeList$chronic[j],
+					episodic			=OutcomeList$episodic[j])
+		df_counts=rbind(df_counts,row)
+		counter2=counter2+1
 	    print(paste( " Calculating incidence for target:", target_id[i],"and outcome:", OutcomeList$outcome_id[j]))
-	ds <- data_prep(ae = outcome, target = target)
-	ds_ir     <- cbind(cut_and_aggregate(ds),databaseId)
-	csv_file <- paste0(outputFolderIR,"/episodic.csv")
-	if (file.exists(csv_file)) {
-	write.table(ds_ir, csv_file, sep = ",", col.names = FALSE, row.names = FALSE, append = TRUE)
-		} else 	{
-		  write.table(ds_ir, csv_file, sep = ",", col.names = TRUE, row.names = FALSE)
-				}     
-		}
-    
+		ds <- data_prep(ae = outcome, target = target)
+		Age_Group= cut(ds$age_at_index_T, breaks = c(18,55,70,80,120))
+		modified_count <- ifelse(ds$count> 0, 1, 0)
+	 
+		s2[[counter2]] <- survfit(Surv(ds$studytime, modified_count) ~ 1,data = ds)
+		s2[[counter2]]$target=target_id[i]
+		s2[[counter2]]$outcome=OutcomeList$outcome_id[j]	
+		s2[[counter2]]$databaseId=databaseId
+		
+		s2_age[[counter2]] <- survfit(Surv(ds$studytime, modified_count) ~ Age_Group,data = ds)
+		s2_age[[counter2]]$target=target_id[i]
+		s2_age[[counter2]]$outcome=OutcomeList$outcome_id[j]	
+		s2_age[[counter2]]$databaseId=databaseId
 
-   }}
- 
-          
- 		
+		# add the mcf here
+		# write this to a csv table
+		# this does not take outcome (takes an object of type 
+		#save the episodic event table
+		ds_ep=episodic_prep(target,outcome)
+		df_events=episodic_events(ds_ep)
+        csv_file <- paste0(outputFolderIR,"/episodic_events.csv")
+		write_table(df_events,csv_file)
+	 
+		mcf1[[counter2]]=reda::mcf(Recur(id=subject_id,time=time,event=event)~1,data=ds_ep)
+		mcf1_age[[counter2]]=reda::mcf(Recur(id=subject_id,time=time,event=event)~Age_Group,data=ds_ep)
+		ds_ir     <- cbind(cut_and_aggregate(ds),databaseId)
+		csv_file <- paste0(outputFolderIR,"/episodic.csv")
+		write_table(ds_ir,csv_file)
+		}
+	}
+   }
+   saveRDS(s1,paste0(outputFolderIR,		 	"/chronic_tte.rds"))
+   saveRDS(s1_age,paste0(outputFolderIR, 		"/chronic_tte_by_age.rds"))
+   saveRDS(s2,paste0(outputFolderIR,	 		"/episodic_tte.rds"))
+   saveRDS(s2_age,paste0(outputFolderIR, 		"/episodic_tte_by_age.rds"))
+   saveRDS(mcf1,paste0(outputFolderIR,	 		"/ mcf1.rds"))
+   saveRDS(mcf1_age,paste0(outputFolderIR, 		"/ mcf1_age.rds"))
+   write.csv(df_counts,paste0(outputFolderIR, "/counts.csv"))
+	}
+
+
+		
+		
