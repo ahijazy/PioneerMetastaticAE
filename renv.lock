@@ -57,6 +57,12 @@
 			"Source" : "Repository",
 			"Repository" : "CRAN"
 		},
+		"reda" : {
+			"Package" : "reda",
+			"Version" : "0.5.4",
+			"Source" : "Repository",
+			"Repository" : "CRAN"
+		},
 		"pillar" : {
 			"Package" : "pillar",
 			"Version" : "1.9.0",
