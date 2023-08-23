@@ -68,7 +68,7 @@ execute_IR  (connectionDetails=connectionDetails,
                        cohortTable = cohortTable,
                        tempEmulationSchema = getOption("sqlRenderTempEmulationSchema"),
                        databaseId = databaseId,
-					             outputFolderIR=outputFolderIR
+		       outputFolderIR=outputFolderIR
                       ) 
 
 # if you want to view the shiny app locally, uncomment the following section
