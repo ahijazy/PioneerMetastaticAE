@@ -9,6 +9,11 @@ cohort_id,cohort_name
 907,mHSPC ADT plus enzalutamide plus docetaxel
 908,mHSPC ADT plus apalutamide plus docetaxel
 909,mHSPC ADT plus datolutamide plus docetaxel
+948,Sensitivity Chemotherapy as a procedure
+949,Sensitivity Chemotherapy as a procedure and missing an equivalent drug record
+950,Sensitivity ADT prior use
+952,Sensitivity asses ADT missigness around ARTA use year window
+953,Sensitivity asses ADT missigness around ARTA use month widow
 869,Acute cardiac event
 853,Alopecia
 870,Bone marrow suppression
@@ -33,4 +38,3 @@ cohort_id,cohort_name
 917,Abnormal hepatic function (chronic)
 866,Kidney failure (chronic)
 857,Kidney failure (episodic)
-
