@@ -39,7 +39,7 @@
 #'                                            provide a schema with write privileges where temp tables
 #'                                            can be created.
 #' @param verifyDependencies                  Check whether correct package versions are installed?
-#' @param outputFolderoutputFolderIR          Name of local folder to place results; make sure to use
+#' @param outputFolderIR          	      Name of local folder to place results; make sure to use
 #'                                            forward slashes (/). Do not use a folder on a network
 #'                                            drive since this greatly impacts performance.
 #' @param databaseId                          A short string for identifying the database (e.g.
@@ -51,10 +51,13 @@ execute_IR <- function(connectionDetails,
                        cohortDatabaseSchema = cdmDatabaseSchema,
                        cohortTable = "cohort",
                        tempEmulationSchema = getOption("sqlRenderTempEmulationSchema"),
-                       outputFolder,
                        databaseId = databaseId,
 					   outputFolderIR=outputFolderIR) 
 {
+# Let's check if output folder is present and if not create it 
+if (!file.exists(outputFolderIR)) {
+  dir.create(outputFolderIR, recursive = TRUE)
+}
 # the csv where the analysis settings are
 IRsettings = read.csv("./inst/settings/IRsettings.csv")
 ##########################################################################################
