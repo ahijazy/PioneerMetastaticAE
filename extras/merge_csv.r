@@ -2,8 +2,7 @@
 library(dplyr)
 library(purrr)
 
-results_folder='C:/studyathon 3/results/IR'
-
+ 
 merge_csv_files=function(results_folder)
 {
 # Set your results folder path
