@@ -43,10 +43,7 @@ for (zip_file in zip_files) {
 }
 return(merged_data_list)
 }
-
-# Example: Access merged data for a specific filename (CSV)
-specific_filename <- "example.csv" 
-merged_data <- merged_data_list[[specific_filename]]
+ 
 
 
 
