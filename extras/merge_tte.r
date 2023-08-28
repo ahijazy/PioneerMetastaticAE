@@ -1,7 +1,6 @@
 # Load required libraries
 library(purrr)
-results_folder='C:/studyathon 3/results/IR'
-
+ 
 merge_tte=function(results_folder)
 { 
 # Step 1: List zip files
