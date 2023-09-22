@@ -1,14 +1,15 @@
 cohort_id,cohort_name
-939,mHSPC ADT only
-940,mHSPC ADT plus abiraterone
-941,mHSPC ADT plus enzalutamide
-942,mHSPC ADT plus apalutamide
-951,mHSPC ADT plus darolutamide
-943,mHSPC ADT plus docetaxel
-944,mHSPC ADT plus abiraterone plus docetaxel
-945,mHSPC ADT plus enzalutamide plus docetaxel
-946,mHSPC ADT plus apalutamide plus docetaxel
-947,mHSPC ADT plus datolutamide plus docetaxel
+1009,T1_mHSPC ADT only treated 
+1010,T1_mHSPC ADT only treated (Sensitivity v7 all ADT)
+1011,T2_mHSPC + ABI 
+1012,T3_mHSPC + ENZ 
+1013,T4_mHSPC + APA 
+1014,T5_mHSPC + DAR 
+1015,T6_mHSPC + Doce 
+1016,T7_mHSPC + ABI + doce 
+1019,T8_mHSPC + ENZ + doce 
+1020,T9_mHSPC + APA+ doce 
+1021,T10_mHSPC + DAR + doce 
 948,Sensitivity Chemotherapy as a procedure
 949,Sensitivity Chemotherapy as a procedure and missing an equivalent drug record
 950,Sensitivity ADT prior use
