@@ -192,19 +192,24 @@ return(df)
 
 episodic_events=function(df)
 {
- df=df[df$event==1,]
- df <-df %>%
-arrange(subject_id, time)
-suppressMessages(
-summary_data <- df %>%
-  group_by(subject_id,target_id ,outcome_id,Age_Group,Year) %>%
-  summarise(count_of_events = n(),
-  mean_time_between_events = ifelse(count_of_events > 1, mean(diff(time)), NA))%>%
-  group_by (target_id ,outcome_id,Age_Group,Year)%>%
-  summarise(total_num_events=sum(count_of_events),
-			avg_number_of_events= mean(count_of_events),
-			conditional_mean_time_between_events= mean(mean_time_between_events, na.rm = TRUE)))
- return(as.data.frame(summary_data))
+df=df[df$event==1,]
+df2 <- 
+ df %>%
+  arrange(subject_id, time) %>%
+  group_by(subject_id, target_id, outcome_id, Age_Group) %>%
+  summarise(
+    count_of_events = n(),
+    mean_time_between_events = ifelse(count_of_events > 1, mean(diff(time)), NA),
+    sd_time_between_events = ifelse(count_of_events > 1, sd(diff(time)), NA)
+  ) %>%
+  group_by(target_id, outcome_id, Age_Group) %>%
+  summarise(
+    total_num_events = sum(count_of_events),
+    avg_number_of_events = mean(count_of_events),
+    conditional_mean_time_between_events = mean(mean_time_between_events, na.rm = TRUE),
+    conditional_sd_time_between_events = sqrt(sum((count_of_events - 1) * sd_time_between_events^2) / (total_num_events - length(unique(subject_id))))
+  )
+ return(as.data.frame(df2))
 }
 ##########################################################################################
 ##########################################################################################
@@ -312,10 +317,8 @@ cut_and_aggregate = function(df, breaks_age = c(55, 70, 80)){
 ##########################################################################################
 ##########################################################################################
 ##########################################################################################
-# write function
-# appends to table (csv) if the file exist and creates it if not
-{
 write_table=function(object,csv_file)
+{
 if (file.exists(csv_file)) {
 		  write.table(object, csv_file, sep = ",", col.names = FALSE, row.names = FALSE, append = TRUE)
 		} else 	{
