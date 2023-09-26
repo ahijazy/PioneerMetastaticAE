@@ -1,4 +1,4 @@
-"","target_name","target_id","outcome_name","outcome_id","episodic","chronic"
+"target_id","","target_name","outcome_id","outcome_name","episodic","chronic"
 "1",1009,"T1_mHSPC ADT only treated ",869,"Acute cardiac event",1,0
 "12",1009,"T1_mHSPC ADT only treated ",853,"Alopecia",0,1
 "23",1009,"T1_mHSPC ADT only treated ",870,"Bone marrow suppression",1,0
