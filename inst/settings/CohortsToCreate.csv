@@ -1,4 +1,4 @@
-cohort_id,cohort_name
+atlasId,cohort_name
 1009,T1_mHSPC ADT only treated 
 1010,T1_mHSPC ADT only treated (Sensitivity v7 all ADT)
 1011,T2_mHSPC + ABI 
@@ -10,16 +10,16 @@ cohort_id,cohort_name
 1019,T8_mHSPC + ENZ + doce 
 1020,T9_mHSPC + APA+ doce 
 1021,T10_mHSPC + DAR + doce 
-1039,T9_mHSPC + APA+ doce (review v7) sens - cohort exit 1 year          
-1038,T9_mHSPC + APA+ doce (review v7) sens - cohort exit 60 days       
-1037,T8_mHSPC + ENZ + doce (review v7) sens - cohort exit 1 year         
-1036,T8_mHSPC + ENZ + doce (review v7) sens - cohort exit 60 days       
-1035,T7_mHSPC + ABI + doce (review v7) sens - cohort exit 1 year          
-1034,T7_mHSPC + ABI + doce (review v7) sens - cohort exit 60 days        
-1033,T4_mHSPC + APA (review v7) JB sens - cohort exit 1 year  
+1039,T9_mHSPC + APA+ doce (review v7) sens - cohort exit 1 year
+1038,T9_mHSPC + APA+ doce (review v7) sens - cohort exit 60 days
+1037,T8_mHSPC + ENZ + doce (review v7) sens - cohort exit 1 year
+1036,T8_mHSPC + ENZ + doce (review v7) sens - cohort exit 60 days
+1035,T7_mHSPC + ABI + doce (review v7) sens - cohort exit 1 year
+1034,T7_mHSPC + ABI + doce (review v7) sens - cohort exit 60 days
+1033,T4_mHSPC + APA (review v7) JB sens - cohort exit 1 year
 1032,T4_mHSPC + APA (review v7) JB sens - cohort exit 60 days
-1031,T2_mHSPC + ABI (review v7) JB sens - cohort exit 1 year    
-1030,T2_mHSPC + ABI (review v7) JB sens - cohort exit 60 days 
+1031,T2_mHSPC + ABI (review v7) JB sens - cohort exit 1 year
+1030,T2_mHSPC + ABI (review v7) JB sens - cohort exit 60 days
 1029,T3_mHSPC + ENZ (review v7) sens - cohort exit 1 year
 1028,T3_mHSPC + ENZ (review v7) sens - cohort exit 60 days
 948,Sensitivity Chemotherapy as a procedure
