@@ -50,7 +50,3 @@ Remotes:
   ohdsi/CirceR,
   ohdsi/CohortGenerator,
   ohdsi/OhdsiShinyModules
-Suggests:
-    testthat,
-    knitr,
-    rmarkdown
