@@ -1,32 +1,27 @@
-atlasId,cohort_name
-1009,T1_mHSPC ADT only treated 
-1010,T1_mHSPC ADT only treated (Sensitivity v7 all ADT)
-1011,T2_mHSPC + ABI 
-1012,T3_mHSPC + ENZ 
-1013,T4_mHSPC + APA 
-1014,T5_mHSPC + DAR 
-1015,T6_mHSPC + Doce 
-1016,T7_mHSPC + ABI + doce 
-1019,T8_mHSPC + ENZ + doce 
-1020,T9_mHSPC + APA+ doce 
-1021,T10_mHSPC + DAR + doce 
-1039,T9_mHSPC + APA+ doce (review v7) sens - cohort exit 1 year
-1038,T9_mHSPC + APA+ doce (review v7) sens - cohort exit 60 days
-1037,T8_mHSPC + ENZ + doce (review v7) sens - cohort exit 1 year
-1036,T8_mHSPC + ENZ + doce (review v7) sens - cohort exit 60 days
-1035,T7_mHSPC + ABI + doce (review v7) sens - cohort exit 1 year
-1034,T7_mHSPC + ABI + doce (review v7) sens - cohort exit 60 days
-1033,T4_mHSPC + APA (review v7) JB sens - cohort exit 1 year
-1032,T4_mHSPC + APA (review v7) JB sens - cohort exit 60 days
-1031,T2_mHSPC + ABI (review v7) JB sens - cohort exit 1 year
-1030,T2_mHSPC + ABI (review v7) JB sens - cohort exit 60 days
-1029,T3_mHSPC + ENZ (review v7) sens - cohort exit 1 year
-1028,T3_mHSPC + ENZ (review v7) sens - cohort exit 60 days
-948,Sensitivity Chemotherapy as a procedure
-949,Sensitivity Chemotherapy as a procedure and missing an equivalent drug record
-950,Sensitivity ADT prior use
-952,Sensitivity asses ADT missigness around ARTA use year window
-953,Sensitivity asses ADT missigness around ARTA use one month window
+cohortId,cohort_name
+1040,[PIONEER 3.0] T1_mHSPC ADT only treated (review v7.1)
+1045,[PIONEER 3.0] T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)
+1041,[PIONEER 3.0] T2_mHSPC + ABI (review v7.1)
+1042,[PIONEER 3.0] T3_mHSPC + ENZ (review v7.1)
+1043,[PIONEER 3.0] T4_mHSPC + APA (review v7.1)
+1044,[PIONEER 3.0] T5_mHSPC + DAR (review v7.1)
+1015,[PIONEER 3.0] T6_mHSPC + Doce (review v7)
+1047,[PIONEER 3.0] T7_mHSPC + ABI + doce (review v7.1)
+1046,[PIONEER 3.0] T8_mHSPC + ENZ + doce (review v7.1)
+1020,[PIONEER 3.0] T9_mHSPC + APA+ doce (review v7.1)
+1048,[PIONEER 3.0] T10_mHSPC + DAR + doce (review v7.1)
+1050,[PIONEER 3.0] T2_mHSPC + ABI (sens 60 days)
+1051,[PIONEER 3.0] T2_mHSPC + ABI (sens 1yr)
+1052,[PIONEER 3.0] T3_mHSPC + ENZ (sens 60 days)
+1053,[PIONEER 3.0] T3_mHSPC + ENZ (sens 1yr)
+1055,[PIONEER 3.0] T4_mHSPC + APA (sens 60 days)
+1056,[PIONEER 3.0] T4_mHSPC + APA (sens 1yr)
+1057,[PIONEER 3.0] T7_mHSPC + ABI + doce (sens 60 days)
+1058,[PIONEER 3.0] T7_mHSPC + ABI + doce (sens 1yr)
+1059,[PIONEER 3.0] T8_mHSPC + ENZ + doce (sens 60 days)
+1060,[PIONEER 3.0] T8_mHSPC + ENZ + doce (sens 1yr)
+1061,[PIONEER 3.0] T9_mHSPC + APA+ doce (sens 60 days)
+1062,[PIONEER 3.0] T9_mHSPC + APA+ doce (sens 1yr)
 869,Acute cardiac event
 853,Alopecia
 870,Bone marrow suppression
