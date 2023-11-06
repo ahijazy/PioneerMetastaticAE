@@ -96,10 +96,25 @@ WHERE T.cohort_definition_id = @target_id
 ##########################################################################################
 ##########################################################################################
 # All the target population 
-sql_target ='SELECT T.COHORT_DEFINITION_ID as target_id, T.SUBJECT_ID,T.COHORT_START_DATE,T.COHORT_END_DATE,p.YEAR_OF_BIRTH
+sql_target ='
+SELECT T.COHORT_DEFINITION_ID as target_id, T.SUBJECT_ID, T.COHORT_START_DATE, T.COHORT_END_DATE, p.YEAR_OF_BIRTH
 FROM @cohortDatabaseSchema.@cohortTable T 
 JOIN @cdmDatabaseSchema.person p ON T.subject_id = p.person_id 
 WHERE T.COHORT_DEFINITION_ID=@target_id'
+
+sql_target_chronic= '
+SELECT T.COHORT_DEFINITION_ID as target_id, T.SUBJECT_ID, T.COHORT_START_DATE, T.COHORT_END_DATE, p.YEAR_OF_BIRTH
+FROM @cohortDatabaseSchema.@cohortTable T
+JOIN @cdmDatabaseSchema.person p ON T.subject_id = p.person_id
+WHERE T.COHORT_DEFINITION_ID = @target_id
+AND NOT EXISTS (
+    SELECT 1
+    FROM @cohortDatabaseSchema.@cohortTable AS outcome
+    WHERE outcome.SUBJECT_ID = T.SUBJECT_ID
+    AND outcome.COHORT_DEFINITION_ID = @outcome_id
+    AND outcome.COHORT_START_DATE < T.COHORT_START_DATE
+)';
+
 
 ##########################################################################################
 ##########################################################################################
@@ -350,7 +365,7 @@ if (file.exists(csv_file)) {
   df_counts=  cbind(IRsettings,target_count=0,outcome_count=0)
 for(i in 1:length(target_id)){
     target <- sql_translate_target(sql = sql_target, target_id = target_id[i]) %>% get_data
-	if(nrow(target)==0)
+	if(nrow(target)<5)
 	{
 	print(paste("No data for cohort:", target_id[i]))	 
 	next
@@ -363,10 +378,18 @@ for(i in 1:length(target_id)){
 	{
 		if(OutcomeList$chronic[j]==1)
 		{
+           target_chronic= sql_translate_ae(sql = sql_target_chronic,target_id=target_id[i], outcome_id = OutcomeList$outcome_id[j]) %>% get_data
            outcome <- sql_translate_ae(sql = sql_first_outcome,target_id=target_id[i], outcome_id = OutcomeList$outcome_id[j]) %>% get_data
-		   if(nrow(outcome)==0)
+		     if(nrow(target_chronic)<5)
 			{
-				print(paste("No outcomes for target cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
+				print(paste("Not enough data for target cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
+ 				next
+			} 
+      	indicator=which(target_id [i]==	df_counts	$target_id & outcome_id[j]==df_counts$outcome_id)
+      	df_counts$target_count[indicator]=nrow(target_chronic)
+       if(nrow(outcome)<5)
+			{
+				print(paste("Not enough outcomes for target cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
  				next
 			}
 		indicator=which(	OutcomeList	$target_name	[j]	==	df_counts	$target_name	&
@@ -379,14 +402,14 @@ for(i in 1:length(target_id)){
 		counter1=counter1+1
 		print(paste( " Calculating incidence for target:", target_id[i],"and outcome:", OutcomeList$outcome_id[j]))
 		# Get the prepped data set
-		ds <- data_prep(ae = outcome, target = target)
+		ds <- data_prep(ae = outcome, target = target_chronic)
         Age_Group= cut(ds$age_at_index_T, breaks = c(18,55,70,80,120))
 	 
 	 
 		# fit Keplan-Meier Curves (overall (s1) and by age s1_age) - chronic events
 		 
 		s1[[counter1]] <- survfit(Surv(ds$studytime, ds$count) ~  1,   data = ds)
-		s1[[counter1]]$target		=target_id[i]
+		s1[[counter1]]$target		  =target_id[i]
 		s1[[counter1]]$outcome		=OutcomeList$outcome_id[j]	
 		s1[[counter1]]$databaseId	=databaseId
 
@@ -420,9 +443,9 @@ for(i in 1:length(target_id)){
 		 if(OutcomeList$episodic[j]==1)
 		{
            outcome <- sql_translate_ae(sql = sql_all_outcomes,target_id=target_id[i], outcome_id = OutcomeList$outcome_id[j]) %>% get_data
-		     if(nrow(outcome)==0)
+		     if(nrow(outcome)<5)
 			   {
-			   print(paste("No outcomes for cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
+			   print(paste("Not enough outcomes for cohort:", target_id[i],"and outcome:",OutcomeList$outcome_id[j]))
 			   next
 			   }
 	
@@ -478,11 +501,11 @@ for(i in 1:length(target_id)){
    }
    df_counts=cbind(df_counts,databaseId)
    
-   saveRDS(s1,					paste0(outputFolderIR,		 	"/chronic_tte.rds"))
-   saveRDS(s1_age,				paste0(outputFolderIR, 			"/chronic_tte_by_age.rds"))
-   saveRDS(s2,					paste0(outputFolderIR,	 		"/episodic_tte.rds"))
-   saveRDS(s2_age,				paste0(outputFolderIR, 			"/episodic_tte_by_age.rds"))
-   saveRDS(mcf_episodic,		paste0(outputFolderIR,	 		"/mcf_episodic.rds"))
-   saveRDS(mcf_episodic_by_age,	paste0(outputFolderIR, 			"/mcf_episodic_by_age.rds"))
-   write.csv(df_counts,			paste0(outputFolderIR, 			"/counts.csv"))
-	}
+   saveRDS(s1,				        	paste0(outputFolderIR,		 	"/chronic_tte.rds"))
+   saveRDS(s1_age,			      	paste0(outputFolderIR,      "/chronic_tte_by_age.rds"))
+   saveRDS(s2,				         	paste0(outputFolderIR,	 	  "/episodic_tte.rds"))
+   saveRDS(s2_age,			       	paste0(outputFolderIR, 			"/episodic_tte_by_age.rds"))
+   saveRDS(mcf_episodic,		    paste0(outputFolderIR,	 		"/mcf_episodic.rds"))
+   saveRDS(mcf_episodic_by_age,	paste0(outputFolderIR, 	    "/mcf_episodic_by_age.rds"))
+   write.csv(df_counts,			    paste0(outputFolderIR, 			"/counts.csv"))
+	} 
