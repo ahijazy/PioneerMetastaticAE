@@ -717,6 +717,7 @@ for(i in 1:length(target_id)){
    }
 ##########################################################################################
    df_counts=cbind(df_counts,databaseId)
+   df_counts=censor_counts_df(df_counts)
    saveRDS(s1,				        paste0(outputFolderIR,	 	"/chronic_tte.rds"))
    saveRDS(s1_age,			      	paste0(outputFolderIR,      "/chronic_tte_by_age.rds"))
    saveRDS(s2,				       	paste0(outputFolderIR, 		"/episodic_tte.rds"))
