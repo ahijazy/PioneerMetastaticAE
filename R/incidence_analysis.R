@@ -293,9 +293,9 @@ data_prep_episodic <- function(ae, target){
                    age_at_index_T         = lubridate::year(ae$COHORT_START_DATE) - ae$YEAR_OF_BIRTH,
                    time_to_outcome_years  = as.numeric(difftime(ae$OUTCOME_START_DATE, ae$COHORT_START_DATE, units = "days"))/365.25,
                    index_year_target      = lubridate::year(ae$COHORT_START_DATE)) %>%
-              group_by(target_id, outcome_id, subject_id, age_at_index_T, time_to_outcome_years, index_year_target) %>%
-              summarise(count = n())
-  
+              group_by(target_id, outcome_id, subject_id, age_at_index_T,  index_year_target) %>%
+              summarise(count = n(),
+                        time_to_outcome_years = min(time_to_outcome_years))
 # Create the dataframe all patients at risk (i.e. all patients in the target population)
   df_target <-  mutate(target,
                          target_id         = target$TARGET_ID,
@@ -316,7 +316,6 @@ data_prep_episodic <- function(ae, target){
   
   return(as.data.frame(df_comb))
 }
-
 #############################################################
 #############################################################
 #############################################################
