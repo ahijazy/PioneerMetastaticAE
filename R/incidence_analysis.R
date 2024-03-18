@@ -168,10 +168,6 @@ WHERE COHORT_DEFINITION_ID = @cohort_id;"
 
 
 
-
-
-
-
 #############################################################
 #############################################################
 #############################################################
@@ -320,7 +316,7 @@ data_prep_episodic <- function(ae, target){
 #############################################################
 #############################################################
 # cut and aggregate the data at the desired age groups
-cut_and_aggregate = function(df, breaks_age = c(55, 70, 80))
+cut_and_aggregate = function(df, breaks_age = c(40,50,60,70,80))
 {	
   break_points_age  <- c(18, breaks_age, Inf) 
   df                <- mutate(df, age_cat = cut(age_at_index_T, breaks = break_points_age), include.lowest = TRUE)
@@ -386,7 +382,7 @@ outcome_id=unique(df_ae_1$outcome_id)
 names(df_o_1)=c("target_id","outcome_id","subject_id","Age_Group","Year","time","event")
 
 df=data.frame(rbind(df_o_1, df_ae_1))
-df$Age_Group= cut(df$Age_Group, breaks = c(18,55,70,80,120))
+df$Age_Group= cut(df$Age_Group, breaks = c(18,40,50,60,70,80,120))
 return(df)
 }
 #############################################################
@@ -642,7 +638,7 @@ for(i in 1:length(target_id)){
 		print(paste( " Calculating incidence for target:", target_id[i],"and outcome:", OutcomeList$outcome_id[j]))
 		# Get the prepped data set
 		ds <- data_prep_chronic(ae = outcome, target = target_chronic)
-    Age_Group= cut(ds$age_at_index_T, breaks = c(18,55,70,80,120))
+    Age_Group= cut(ds$age_at_index_T, breaks = c(18,40,50,60,70,80,120))
 
 		# fit Keplan-Meier Curves (overall (s1) and by age s1_age) - chronic events
 		 
@@ -681,7 +677,7 @@ for(i in 1:length(target_id)){
  		counter2=counter2+1
 	    print(paste( " Calculating incidence for target:", target_id[i],"and outcome:", OutcomeList$outcome_id[j]))
 		ds <- data_prep_episodic(ae = outcome, target = target)
-		Age_Group= cut(ds$age_at_index_T, breaks = c(18,55,70,80,120))
+		Age_Group= cut(ds$age_at_index_T, breaks = c(18,40,50,60,70,80,120))
 		modified_count <- ifelse(ds$count> 0, 1, 0)
 	 
 		s2[[counter2]] <- survfit(Surv(ds$TAR, modified_count) ~ 1,data = ds)
