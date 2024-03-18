@@ -1,0 +1,22 @@
+outcome_id,outcome_name,episodic,chronic
+869,Acute cardiac event,1,0
+853,Alopecia,0,1
+870,Bone marrow suppression,1,0
+872,Cerebral event,1,0
+877,Chronic heart failure including peripheral oedema,0,1
+881,Cognitive disturbance,1,0
+883,Diabetes,0,1
+868,Electrolyte imbalance,1,0
+871,Falls,1,0
+874,Fatigue,1,0
+888,GI toxicity,1,0
+873,Hospitalization,1,0
+777,Hypertension,0,1
+887,Sepsis,1,0
+889,Kidney failure,1,0
+813,Neuropathy,0,1
+855,Rash & pruritus,1,0
+890,Seizures,1,0
+833,Skeletally related events,1,0
+891,Thromboembolism,1,0
+896,Abnormal hepatic function,1,0

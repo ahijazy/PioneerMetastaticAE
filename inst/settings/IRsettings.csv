@@ -1,0 +1,400 @@
+"","target_id","target_name","outcome_id","outcome_name","episodic","chronic"
+"7",1015,"T6_mHSPC + Doce (review v7)",869,"Acute cardiac event",1,0
+"26",1015,"T6_mHSPC + Doce (review v7)",853,"Alopecia",0,1
+"45",1015,"T6_mHSPC + Doce (review v7)",870,"Bone marrow suppression",1,0
+"64",1015,"T6_mHSPC + Doce (review v7)",872,"Cerebral event",1,0
+"83",1015,"T6_mHSPC + Doce (review v7)",877,"Chronic heart failure including peripheral oedema",0,1
+"102",1015,"T6_mHSPC + Doce (review v7)",881,"Cognitive disturbance",1,0
+"121",1015,"T6_mHSPC + Doce (review v7)",883,"Diabetes",0,1
+"140",1015,"T6_mHSPC + Doce (review v7)",868,"Electrolyte imbalance",1,0
+"159",1015,"T6_mHSPC + Doce (review v7)",871,"Falls",1,0
+"178",1015,"T6_mHSPC + Doce (review v7)",874,"Fatigue",1,0
+"197",1015,"T6_mHSPC + Doce (review v7)",888,"GI toxicity",1,0
+"216",1015,"T6_mHSPC + Doce (review v7)",873,"Hospitalization",1,0
+"235",1015,"T6_mHSPC + Doce (review v7)",777,"Hypertension",0,1
+"254",1015,"T6_mHSPC + Doce (review v7)",887,"Sepsis",1,0
+"273",1015,"T6_mHSPC + Doce (review v7)",889,"Kidney failure",1,0
+"292",1015,"T6_mHSPC + Doce (review v7)",813,"Neuropathy",0,1
+"311",1015,"T6_mHSPC + Doce (review v7)",855,"Rash & pruritus",1,0
+"330",1015,"T6_mHSPC + Doce (review v7)",890,"Seizures",1,0
+"349",1015,"T6_mHSPC + Doce (review v7)",833,"Skeletally related events",1,0
+"368",1015,"T6_mHSPC + Doce (review v7)",891,"Thromboembolism",1,0
+"387",1015,"T6_mHSPC + Doce (review v7)",896,"Abnormal hepatic function",1,0
+"1",1040,"T1_mHSPC ADT only treated (review v7.1)",869,"Acute cardiac event",1,0
+"20",1040,"T1_mHSPC ADT only treated (review v7.1)",853,"Alopecia",0,1
+"39",1040,"T1_mHSPC ADT only treated (review v7.1)",870,"Bone marrow suppression",1,0
+"58",1040,"T1_mHSPC ADT only treated (review v7.1)",872,"Cerebral event",1,0
+"77",1040,"T1_mHSPC ADT only treated (review v7.1)",877,"Chronic heart failure including peripheral oedema",0,1
+"96",1040,"T1_mHSPC ADT only treated (review v7.1)",881,"Cognitive disturbance",1,0
+"115",1040,"T1_mHSPC ADT only treated (review v7.1)",883,"Diabetes",0,1
+"134",1040,"T1_mHSPC ADT only treated (review v7.1)",868,"Electrolyte imbalance",1,0
+"153",1040,"T1_mHSPC ADT only treated (review v7.1)",871,"Falls",1,0
+"172",1040,"T1_mHSPC ADT only treated (review v7.1)",874,"Fatigue",1,0
+"191",1040,"T1_mHSPC ADT only treated (review v7.1)",888,"GI toxicity",1,0
+"210",1040,"T1_mHSPC ADT only treated (review v7.1)",873,"Hospitalization",1,0
+"229",1040,"T1_mHSPC ADT only treated (review v7.1)",777,"Hypertension",0,1
+"248",1040,"T1_mHSPC ADT only treated (review v7.1)",887,"Sepsis",1,0
+"267",1040,"T1_mHSPC ADT only treated (review v7.1)",889,"Kidney failure",1,0
+"286",1040,"T1_mHSPC ADT only treated (review v7.1)",813,"Neuropathy",0,1
+"305",1040,"T1_mHSPC ADT only treated (review v7.1)",855,"Rash & pruritus",1,0
+"324",1040,"T1_mHSPC ADT only treated (review v7.1)",890,"Seizures",1,0
+"343",1040,"T1_mHSPC ADT only treated (review v7.1)",833,"Skeletally related events",1,0
+"362",1040,"T1_mHSPC ADT only treated (review v7.1)",891,"Thromboembolism",1,0
+"381",1040,"T1_mHSPC ADT only treated (review v7.1)",896,"Abnormal hepatic function",1,0
+"2",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",869,"Acute cardiac event",1,0
+"21",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",853,"Alopecia",0,1
+"40",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",870,"Bone marrow suppression",1,0
+"59",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",872,"Cerebral event",1,0
+"78",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",877,"Chronic heart failure including peripheral oedema",0,1
+"97",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",881,"Cognitive disturbance",1,0
+"116",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",883,"Diabetes",0,1
+"135",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",868,"Electrolyte imbalance",1,0
+"154",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",871,"Falls",1,0
+"173",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",874,"Fatigue",1,0
+"192",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",888,"GI toxicity",1,0
+"211",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",873,"Hospitalization",1,0
+"230",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",777,"Hypertension",0,1
+"249",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",887,"Sepsis",1,0
+"268",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",889,"Kidney failure",1,0
+"287",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",813,"Neuropathy",0,1
+"306",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",855,"Rash & pruritus",1,0
+"325",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",890,"Seizures",1,0
+"344",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",833,"Skeletally related events",1,0
+"363",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",891,"Thromboembolism",1,0
+"382",1045,"T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT)",896,"Abnormal hepatic function",1,0
+"3",1050,"T2_mHSPC + ABI (sens 60 days)",869,"Acute cardiac event",1,0
+"22",1050,"T2_mHSPC + ABI (sens 60 days)",853,"Alopecia",0,1
+"41",1050,"T2_mHSPC + ABI (sens 60 days)",870,"Bone marrow suppression",1,0
+"60",1050,"T2_mHSPC + ABI (sens 60 days)",872,"Cerebral event",1,0
+"79",1050,"T2_mHSPC + ABI (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"98",1050,"T2_mHSPC + ABI (sens 60 days)",881,"Cognitive disturbance",1,0
+"117",1050,"T2_mHSPC + ABI (sens 60 days)",883,"Diabetes",0,1
+"136",1050,"T2_mHSPC + ABI (sens 60 days)",868,"Electrolyte imbalance",1,0
+"155",1050,"T2_mHSPC + ABI (sens 60 days)",871,"Falls",1,0
+"174",1050,"T2_mHSPC + ABI (sens 60 days)",874,"Fatigue",1,0
+"193",1050,"T2_mHSPC + ABI (sens 60 days)",888,"GI toxicity",1,0
+"212",1050,"T2_mHSPC + ABI (sens 60 days)",873,"Hospitalization",1,0
+"231",1050,"T2_mHSPC + ABI (sens 60 days)",777,"Hypertension",0,1
+"250",1050,"T2_mHSPC + ABI (sens 60 days)",887,"Sepsis",1,0
+"269",1050,"T2_mHSPC + ABI (sens 60 days)",889,"Kidney failure",1,0
+"288",1050,"T2_mHSPC + ABI (sens 60 days)",813,"Neuropathy",0,1
+"307",1050,"T2_mHSPC + ABI (sens 60 days)",855,"Rash & pruritus",1,0
+"326",1050,"T2_mHSPC + ABI (sens 60 days)",890,"Seizures",1,0
+"345",1050,"T2_mHSPC + ABI (sens 60 days)",833,"Skeletally related events",1,0
+"364",1050,"T2_mHSPC + ABI (sens 60 days)",891,"Thromboembolism",1,0
+"383",1050,"T2_mHSPC + ABI (sens 60 days)",896,"Abnormal hepatic function",1,0
+"4",1052,"T3_mHSPC + ENZ (sens 60 days)",869,"Acute cardiac event",1,0
+"23",1052,"T3_mHSPC + ENZ (sens 60 days)",853,"Alopecia",0,1
+"42",1052,"T3_mHSPC + ENZ (sens 60 days)",870,"Bone marrow suppression",1,0
+"61",1052,"T3_mHSPC + ENZ (sens 60 days)",872,"Cerebral event",1,0
+"80",1052,"T3_mHSPC + ENZ (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"99",1052,"T3_mHSPC + ENZ (sens 60 days)",881,"Cognitive disturbance",1,0
+"118",1052,"T3_mHSPC + ENZ (sens 60 days)",883,"Diabetes",0,1
+"137",1052,"T3_mHSPC + ENZ (sens 60 days)",868,"Electrolyte imbalance",1,0
+"156",1052,"T3_mHSPC + ENZ (sens 60 days)",871,"Falls",1,0
+"175",1052,"T3_mHSPC + ENZ (sens 60 days)",874,"Fatigue",1,0
+"194",1052,"T3_mHSPC + ENZ (sens 60 days)",888,"GI toxicity",1,0
+"213",1052,"T3_mHSPC + ENZ (sens 60 days)",873,"Hospitalization",1,0
+"232",1052,"T3_mHSPC + ENZ (sens 60 days)",777,"Hypertension",0,1
+"251",1052,"T3_mHSPC + ENZ (sens 60 days)",887,"Sepsis",1,0
+"270",1052,"T3_mHSPC + ENZ (sens 60 days)",889,"Kidney failure",1,0
+"289",1052,"T3_mHSPC + ENZ (sens 60 days)",813,"Neuropathy",0,1
+"308",1052,"T3_mHSPC + ENZ (sens 60 days)",855,"Rash & pruritus",1,0
+"327",1052,"T3_mHSPC + ENZ (sens 60 days)",890,"Seizures",1,0
+"346",1052,"T3_mHSPC + ENZ (sens 60 days)",833,"Skeletally related events",1,0
+"365",1052,"T3_mHSPC + ENZ (sens 60 days)",891,"Thromboembolism",1,0
+"384",1052,"T3_mHSPC + ENZ (sens 60 days)",896,"Abnormal hepatic function",1,0
+"5",1055,"T4_mHSPC + APA (sens 60 days)",869,"Acute cardiac event",1,0
+"24",1055,"T4_mHSPC + APA (sens 60 days)",853,"Alopecia",0,1
+"43",1055,"T4_mHSPC + APA (sens 60 days)",870,"Bone marrow suppression",1,0
+"62",1055,"T4_mHSPC + APA (sens 60 days)",872,"Cerebral event",1,0
+"81",1055,"T4_mHSPC + APA (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"100",1055,"T4_mHSPC + APA (sens 60 days)",881,"Cognitive disturbance",1,0
+"119",1055,"T4_mHSPC + APA (sens 60 days)",883,"Diabetes",0,1
+"138",1055,"T4_mHSPC + APA (sens 60 days)",868,"Electrolyte imbalance",1,0
+"157",1055,"T4_mHSPC + APA (sens 60 days)",871,"Falls",1,0
+"176",1055,"T4_mHSPC + APA (sens 60 days)",874,"Fatigue",1,0
+"195",1055,"T4_mHSPC + APA (sens 60 days)",888,"GI toxicity",1,0
+"214",1055,"T4_mHSPC + APA (sens 60 days)",873,"Hospitalization",1,0
+"233",1055,"T4_mHSPC + APA (sens 60 days)",777,"Hypertension",0,1
+"252",1055,"T4_mHSPC + APA (sens 60 days)",887,"Sepsis",1,0
+"271",1055,"T4_mHSPC + APA (sens 60 days)",889,"Kidney failure",1,0
+"290",1055,"T4_mHSPC + APA (sens 60 days)",813,"Neuropathy",0,1
+"309",1055,"T4_mHSPC + APA (sens 60 days)",855,"Rash & pruritus",1,0
+"328",1055,"T4_mHSPC + APA (sens 60 days)",890,"Seizures",1,0
+"347",1055,"T4_mHSPC + APA (sens 60 days)",833,"Skeletally related events",1,0
+"366",1055,"T4_mHSPC + APA (sens 60 days)",891,"Thromboembolism",1,0
+"385",1055,"T4_mHSPC + APA (sens 60 days)",896,"Abnormal hepatic function",1,0
+"8",1057,"T7_mHSPC + ABI + doce (sens 60 days)",869,"Acute cardiac event",1,0
+"27",1057,"T7_mHSPC + ABI + doce (sens 60 days)",853,"Alopecia",0,1
+"46",1057,"T7_mHSPC + ABI + doce (sens 60 days)",870,"Bone marrow suppression",1,0
+"65",1057,"T7_mHSPC + ABI + doce (sens 60 days)",872,"Cerebral event",1,0
+"84",1057,"T7_mHSPC + ABI + doce (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"103",1057,"T7_mHSPC + ABI + doce (sens 60 days)",881,"Cognitive disturbance",1,0
+"122",1057,"T7_mHSPC + ABI + doce (sens 60 days)",883,"Diabetes",0,1
+"141",1057,"T7_mHSPC + ABI + doce (sens 60 days)",868,"Electrolyte imbalance",1,0
+"160",1057,"T7_mHSPC + ABI + doce (sens 60 days)",871,"Falls",1,0
+"179",1057,"T7_mHSPC + ABI + doce (sens 60 days)",874,"Fatigue",1,0
+"198",1057,"T7_mHSPC + ABI + doce (sens 60 days)",888,"GI toxicity",1,0
+"217",1057,"T7_mHSPC + ABI + doce (sens 60 days)",873,"Hospitalization",1,0
+"236",1057,"T7_mHSPC + ABI + doce (sens 60 days)",777,"Hypertension",0,1
+"255",1057,"T7_mHSPC + ABI + doce (sens 60 days)",887,"Sepsis",1,0
+"274",1057,"T7_mHSPC + ABI + doce (sens 60 days)",889,"Kidney failure",1,0
+"293",1057,"T7_mHSPC + ABI + doce (sens 60 days)",813,"Neuropathy",0,1
+"312",1057,"T7_mHSPC + ABI + doce (sens 60 days)",855,"Rash & pruritus",1,0
+"331",1057,"T7_mHSPC + ABI + doce (sens 60 days)",890,"Seizures",1,0
+"350",1057,"T7_mHSPC + ABI + doce (sens 60 days)",833,"Skeletally related events",1,0
+"369",1057,"T7_mHSPC + ABI + doce (sens 60 days)",891,"Thromboembolism",1,0
+"388",1057,"T7_mHSPC + ABI + doce (sens 60 days)",896,"Abnormal hepatic function",1,0
+"9",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",869,"Acute cardiac event",1,0
+"28",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",853,"Alopecia",0,1
+"47",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",870,"Bone marrow suppression",1,0
+"66",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",872,"Cerebral event",1,0
+"85",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"104",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",881,"Cognitive disturbance",1,0
+"123",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",883,"Diabetes",0,1
+"142",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",868,"Electrolyte imbalance",1,0
+"161",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",871,"Falls",1,0
+"180",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",874,"Fatigue",1,0
+"199",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",888,"GI toxicity",1,0
+"218",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",873,"Hospitalization",1,0
+"237",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",777,"Hypertension",0,1
+"256",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",887,"Sepsis",1,0
+"275",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",889,"Kidney failure",1,0
+"294",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",813,"Neuropathy",0,1
+"313",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",855,"Rash & pruritus",1,0
+"332",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",890,"Seizures",1,0
+"351",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",833,"Skeletally related events",1,0
+"370",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",891,"Thromboembolism",1,0
+"389",1059,"T8_mHSPC + ENZ + doce (sens 60 days)",896,"Abnormal hepatic function",1,0
+"10",1061,"T9_mHSPC + APA+ doce (sens 60 days)",869,"Acute cardiac event",1,0
+"29",1061,"T9_mHSPC + APA+ doce (sens 60 days)",853,"Alopecia",0,1
+"48",1061,"T9_mHSPC + APA+ doce (sens 60 days)",870,"Bone marrow suppression",1,0
+"67",1061,"T9_mHSPC + APA+ doce (sens 60 days)",872,"Cerebral event",1,0
+"86",1061,"T9_mHSPC + APA+ doce (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"105",1061,"T9_mHSPC + APA+ doce (sens 60 days)",881,"Cognitive disturbance",1,0
+"124",1061,"T9_mHSPC + APA+ doce (sens 60 days)",883,"Diabetes",0,1
+"143",1061,"T9_mHSPC + APA+ doce (sens 60 days)",868,"Electrolyte imbalance",1,0
+"162",1061,"T9_mHSPC + APA+ doce (sens 60 days)",871,"Falls",1,0
+"181",1061,"T9_mHSPC + APA+ doce (sens 60 days)",874,"Fatigue",1,0
+"200",1061,"T9_mHSPC + APA+ doce (sens 60 days)",888,"GI toxicity",1,0
+"219",1061,"T9_mHSPC + APA+ doce (sens 60 days)",873,"Hospitalization",1,0
+"238",1061,"T9_mHSPC + APA+ doce (sens 60 days)",777,"Hypertension",0,1
+"257",1061,"T9_mHSPC + APA+ doce (sens 60 days)",887,"Sepsis",1,0
+"276",1061,"T9_mHSPC + APA+ doce (sens 60 days)",889,"Kidney failure",1,0
+"295",1061,"T9_mHSPC + APA+ doce (sens 60 days)",813,"Neuropathy",0,1
+"314",1061,"T9_mHSPC + APA+ doce (sens 60 days)",855,"Rash & pruritus",1,0
+"333",1061,"T9_mHSPC + APA+ doce (sens 60 days)",890,"Seizures",1,0
+"352",1061,"T9_mHSPC + APA+ doce (sens 60 days)",833,"Skeletally related events",1,0
+"371",1061,"T9_mHSPC + APA+ doce (sens 60 days)",891,"Thromboembolism",1,0
+"390",1061,"T9_mHSPC + APA+ doce (sens 60 days)",896,"Abnormal hepatic function",1,0
+"6",1063,"T5_mHSPC + DAR (sens 60 days)",869,"Acute cardiac event",1,0
+"25",1063,"T5_mHSPC + DAR (sens 60 days)",853,"Alopecia",0,1
+"44",1063,"T5_mHSPC + DAR (sens 60 days)",870,"Bone marrow suppression",1,0
+"63",1063,"T5_mHSPC + DAR (sens 60 days)",872,"Cerebral event",1,0
+"82",1063,"T5_mHSPC + DAR (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"101",1063,"T5_mHSPC + DAR (sens 60 days)",881,"Cognitive disturbance",1,0
+"120",1063,"T5_mHSPC + DAR (sens 60 days)",883,"Diabetes",0,1
+"139",1063,"T5_mHSPC + DAR (sens 60 days)",868,"Electrolyte imbalance",1,0
+"158",1063,"T5_mHSPC + DAR (sens 60 days)",871,"Falls",1,0
+"177",1063,"T5_mHSPC + DAR (sens 60 days)",874,"Fatigue",1,0
+"196",1063,"T5_mHSPC + DAR (sens 60 days)",888,"GI toxicity",1,0
+"215",1063,"T5_mHSPC + DAR (sens 60 days)",873,"Hospitalization",1,0
+"234",1063,"T5_mHSPC + DAR (sens 60 days)",777,"Hypertension",0,1
+"253",1063,"T5_mHSPC + DAR (sens 60 days)",887,"Sepsis",1,0
+"272",1063,"T5_mHSPC + DAR (sens 60 days)",889,"Kidney failure",1,0
+"291",1063,"T5_mHSPC + DAR (sens 60 days)",813,"Neuropathy",0,1
+"310",1063,"T5_mHSPC + DAR (sens 60 days)",855,"Rash & pruritus",1,0
+"329",1063,"T5_mHSPC + DAR (sens 60 days)",890,"Seizures",1,0
+"348",1063,"T5_mHSPC + DAR (sens 60 days)",833,"Skeletally related events",1,0
+"367",1063,"T5_mHSPC + DAR (sens 60 days)",891,"Thromboembolism",1,0
+"386",1063,"T5_mHSPC + DAR (sens 60 days)",896,"Abnormal hepatic function",1,0
+"11",1064,"T10_mHSPC + DAR + doce (sens 60 days)",869,"Acute cardiac event",1,0
+"30",1064,"T10_mHSPC + DAR + doce (sens 60 days)",853,"Alopecia",0,1
+"49",1064,"T10_mHSPC + DAR + doce (sens 60 days)",870,"Bone marrow suppression",1,0
+"68",1064,"T10_mHSPC + DAR + doce (sens 60 days)",872,"Cerebral event",1,0
+"87",1064,"T10_mHSPC + DAR + doce (sens 60 days)",877,"Chronic heart failure including peripheral oedema",0,1
+"106",1064,"T10_mHSPC + DAR + doce (sens 60 days)",881,"Cognitive disturbance",1,0
+"125",1064,"T10_mHSPC + DAR + doce (sens 60 days)",883,"Diabetes",0,1
+"144",1064,"T10_mHSPC + DAR + doce (sens 60 days)",868,"Electrolyte imbalance",1,0
+"163",1064,"T10_mHSPC + DAR + doce (sens 60 days)",871,"Falls",1,0
+"182",1064,"T10_mHSPC + DAR + doce (sens 60 days)",874,"Fatigue",1,0
+"201",1064,"T10_mHSPC + DAR + doce (sens 60 days)",888,"GI toxicity",1,0
+"220",1064,"T10_mHSPC + DAR + doce (sens 60 days)",873,"Hospitalization",1,0
+"239",1064,"T10_mHSPC + DAR + doce (sens 60 days)",777,"Hypertension",0,1
+"258",1064,"T10_mHSPC + DAR + doce (sens 60 days)",887,"Sepsis",1,0
+"277",1064,"T10_mHSPC + DAR + doce (sens 60 days)",889,"Kidney failure",1,0
+"296",1064,"T10_mHSPC + DAR + doce (sens 60 days)",813,"Neuropathy",0,1
+"315",1064,"T10_mHSPC + DAR + doce (sens 60 days)",855,"Rash & pruritus",1,0
+"334",1064,"T10_mHSPC + DAR + doce (sens 60 days)",890,"Seizures",1,0
+"353",1064,"T10_mHSPC + DAR + doce (sens 60 days)",833,"Skeletally related events",1,0
+"372",1064,"T10_mHSPC + DAR + doce (sens 60 days)",891,"Thromboembolism",1,0
+"391",1064,"T10_mHSPC + DAR + doce (sens 60 days)",896,"Abnormal hepatic function",1,0
+"12",1111,"T6_mHSPC + Doce (sensitivity)",869,"Acute cardiac event",1,0
+"31",1111,"T6_mHSPC + Doce (sensitivity)",853,"Alopecia",0,1
+"50",1111,"T6_mHSPC + Doce (sensitivity)",870,"Bone marrow suppression",1,0
+"69",1111,"T6_mHSPC + Doce (sensitivity)",872,"Cerebral event",1,0
+"88",1111,"T6_mHSPC + Doce (sensitivity)",877,"Chronic heart failure including peripheral oedema",0,1
+"107",1111,"T6_mHSPC + Doce (sensitivity)",881,"Cognitive disturbance",1,0
+"126",1111,"T6_mHSPC + Doce (sensitivity)",883,"Diabetes",0,1
+"145",1111,"T6_mHSPC + Doce (sensitivity)",868,"Electrolyte imbalance",1,0
+"164",1111,"T6_mHSPC + Doce (sensitivity)",871,"Falls",1,0
+"183",1111,"T6_mHSPC + Doce (sensitivity)",874,"Fatigue",1,0
+"202",1111,"T6_mHSPC + Doce (sensitivity)",888,"GI toxicity",1,0
+"221",1111,"T6_mHSPC + Doce (sensitivity)",873,"Hospitalization",1,0
+"240",1111,"T6_mHSPC + Doce (sensitivity)",777,"Hypertension",0,1
+"259",1111,"T6_mHSPC + Doce (sensitivity)",887,"Sepsis",1,0
+"278",1111,"T6_mHSPC + Doce (sensitivity)",889,"Kidney failure",1,0
+"297",1111,"T6_mHSPC + Doce (sensitivity)",813,"Neuropathy",0,1
+"316",1111,"T6_mHSPC + Doce (sensitivity)",855,"Rash & pruritus",1,0
+"335",1111,"T6_mHSPC + Doce (sensitivity)",890,"Seizures",1,0
+"354",1111,"T6_mHSPC + Doce (sensitivity)",833,"Skeletally related events",1,0
+"373",1111,"T6_mHSPC + Doce (sensitivity)",891,"Thromboembolism",1,0
+"392",1111,"T6_mHSPC + Doce (sensitivity)",896,"Abnormal hepatic function",1,0
+"13",90001,"ADT main ",869,"Acute cardiac event",1,0
+"32",90001,"ADT main ",853,"Alopecia",0,1
+"51",90001,"ADT main ",870,"Bone marrow suppression",1,0
+"70",90001,"ADT main ",872,"Cerebral event",1,0
+"89",90001,"ADT main ",877,"Chronic heart failure including peripheral oedema",0,1
+"108",90001,"ADT main ",881,"Cognitive disturbance",1,0
+"127",90001,"ADT main ",883,"Diabetes",0,1
+"146",90001,"ADT main ",868,"Electrolyte imbalance",1,0
+"165",90001,"ADT main ",871,"Falls",1,0
+"184",90001,"ADT main ",874,"Fatigue",1,0
+"203",90001,"ADT main ",888,"GI toxicity",1,0
+"222",90001,"ADT main ",873,"Hospitalization",1,0
+"241",90001,"ADT main ",777,"Hypertension",0,1
+"260",90001,"ADT main ",887,"Sepsis",1,0
+"279",90001,"ADT main ",889,"Kidney failure",1,0
+"298",90001,"ADT main ",813,"Neuropathy",0,1
+"317",90001,"ADT main ",855,"Rash & pruritus",1,0
+"336",90001,"ADT main ",890,"Seizures",1,0
+"355",90001,"ADT main ",833,"Skeletally related events",1,0
+"374",90001,"ADT main ",891,"Thromboembolism",1,0
+"393",90001,"ADT main ",896,"Abnormal hepatic function",1,0
+"14",90002,"ADT sens",869,"Acute cardiac event",1,0
+"33",90002,"ADT sens",853,"Alopecia",0,1
+"52",90002,"ADT sens",870,"Bone marrow suppression",1,0
+"71",90002,"ADT sens",872,"Cerebral event",1,0
+"90",90002,"ADT sens",877,"Chronic heart failure including peripheral oedema",0,1
+"109",90002,"ADT sens",881,"Cognitive disturbance",1,0
+"128",90002,"ADT sens",883,"Diabetes",0,1
+"147",90002,"ADT sens",868,"Electrolyte imbalance",1,0
+"166",90002,"ADT sens",871,"Falls",1,0
+"185",90002,"ADT sens",874,"Fatigue",1,0
+"204",90002,"ADT sens",888,"GI toxicity",1,0
+"223",90002,"ADT sens",873,"Hospitalization",1,0
+"242",90002,"ADT sens",777,"Hypertension",0,1
+"261",90002,"ADT sens",887,"Sepsis",1,0
+"280",90002,"ADT sens",889,"Kidney failure",1,0
+"299",90002,"ADT sens",813,"Neuropathy",0,1
+"318",90002,"ADT sens",855,"Rash & pruritus",1,0
+"337",90002,"ADT sens",890,"Seizures",1,0
+"356",90002,"ADT sens",833,"Skeletally related events",1,0
+"375",90002,"ADT sens",891,"Thromboembolism",1,0
+"394",90002,"ADT sens",896,"Abnormal hepatic function",1,0
+"15",90003,"ARSI",869,"Acute cardiac event",1,0
+"34",90003,"ARSI",853,"Alopecia",0,1
+"53",90003,"ARSI",870,"Bone marrow suppression",1,0
+"72",90003,"ARSI",872,"Cerebral event",1,0
+"91",90003,"ARSI",877,"Chronic heart failure including peripheral oedema",0,1
+"110",90003,"ARSI",881,"Cognitive disturbance",1,0
+"129",90003,"ARSI",883,"Diabetes",0,1
+"148",90003,"ARSI",868,"Electrolyte imbalance",1,0
+"167",90003,"ARSI",871,"Falls",1,0
+"186",90003,"ARSI",874,"Fatigue",1,0
+"205",90003,"ARSI",888,"GI toxicity",1,0
+"224",90003,"ARSI",873,"Hospitalization",1,0
+"243",90003,"ARSI",777,"Hypertension",0,1
+"262",90003,"ARSI",887,"Sepsis",1,0
+"281",90003,"ARSI",889,"Kidney failure",1,0
+"300",90003,"ARSI",813,"Neuropathy",0,1
+"319",90003,"ARSI",855,"Rash & pruritus",1,0
+"338",90003,"ARSI",890,"Seizures",1,0
+"357",90003,"ARSI",833,"Skeletally related events",1,0
+"376",90003,"ARSI",891,"Thromboembolism",1,0
+"395",90003,"ARSI",896,"Abnormal hepatic function",1,0
+"16",90004,"Docetaxel sens",869,"Acute cardiac event",1,0
+"35",90004,"Docetaxel sens",853,"Alopecia",0,1
+"54",90004,"Docetaxel sens",870,"Bone marrow suppression",1,0
+"73",90004,"Docetaxel sens",872,"Cerebral event",1,0
+"92",90004,"Docetaxel sens",877,"Chronic heart failure including peripheral oedema",0,1
+"111",90004,"Docetaxel sens",881,"Cognitive disturbance",1,0
+"130",90004,"Docetaxel sens",883,"Diabetes",0,1
+"149",90004,"Docetaxel sens",868,"Electrolyte imbalance",1,0
+"168",90004,"Docetaxel sens",871,"Falls",1,0
+"187",90004,"Docetaxel sens",874,"Fatigue",1,0
+"206",90004,"Docetaxel sens",888,"GI toxicity",1,0
+"225",90004,"Docetaxel sens",873,"Hospitalization",1,0
+"244",90004,"Docetaxel sens",777,"Hypertension",0,1
+"263",90004,"Docetaxel sens",887,"Sepsis",1,0
+"282",90004,"Docetaxel sens",889,"Kidney failure",1,0
+"301",90004,"Docetaxel sens",813,"Neuropathy",0,1
+"320",90004,"Docetaxel sens",855,"Rash & pruritus",1,0
+"339",90004,"Docetaxel sens",890,"Seizures",1,0
+"358",90004,"Docetaxel sens",833,"Skeletally related events",1,0
+"377",90004,"Docetaxel sens",891,"Thromboembolism",1,0
+"396",90004,"Docetaxel sens",896,"Abnormal hepatic function",1,0
+"17",90005,"Docetaxel",869,"Acute cardiac event",1,0
+"36",90005,"Docetaxel",853,"Alopecia",0,1
+"55",90005,"Docetaxel",870,"Bone marrow suppression",1,0
+"74",90005,"Docetaxel",872,"Cerebral event",1,0
+"93",90005,"Docetaxel",877,"Chronic heart failure including peripheral oedema",0,1
+"112",90005,"Docetaxel",881,"Cognitive disturbance",1,0
+"131",90005,"Docetaxel",883,"Diabetes",0,1
+"150",90005,"Docetaxel",868,"Electrolyte imbalance",1,0
+"169",90005,"Docetaxel",871,"Falls",1,0
+"188",90005,"Docetaxel",874,"Fatigue",1,0
+"207",90005,"Docetaxel",888,"GI toxicity",1,0
+"226",90005,"Docetaxel",873,"Hospitalization",1,0
+"245",90005,"Docetaxel",777,"Hypertension",0,1
+"264",90005,"Docetaxel",887,"Sepsis",1,0
+"283",90005,"Docetaxel",889,"Kidney failure",1,0
+"302",90005,"Docetaxel",813,"Neuropathy",0,1
+"321",90005,"Docetaxel",855,"Rash & pruritus",1,0
+"340",90005,"Docetaxel",890,"Seizures",1,0
+"359",90005,"Docetaxel",833,"Skeletally related events",1,0
+"378",90005,"Docetaxel",891,"Thromboembolism",1,0
+"397",90005,"Docetaxel",896,"Abnormal hepatic function",1,0
+"18",90006,"Docetaxel plus ARSI",869,"Acute cardiac event",1,0
+"37",90006,"Docetaxel plus ARSI",853,"Alopecia",0,1
+"56",90006,"Docetaxel plus ARSI",870,"Bone marrow suppression",1,0
+"75",90006,"Docetaxel plus ARSI",872,"Cerebral event",1,0
+"94",90006,"Docetaxel plus ARSI",877,"Chronic heart failure including peripheral oedema",0,1
+"113",90006,"Docetaxel plus ARSI",881,"Cognitive disturbance",1,0
+"132",90006,"Docetaxel plus ARSI",883,"Diabetes",0,1
+"151",90006,"Docetaxel plus ARSI",868,"Electrolyte imbalance",1,0
+"170",90006,"Docetaxel plus ARSI",871,"Falls",1,0
+"189",90006,"Docetaxel plus ARSI",874,"Fatigue",1,0
+"208",90006,"Docetaxel plus ARSI",888,"GI toxicity",1,0
+"227",90006,"Docetaxel plus ARSI",873,"Hospitalization",1,0
+"246",90006,"Docetaxel plus ARSI",777,"Hypertension",0,1
+"265",90006,"Docetaxel plus ARSI",887,"Sepsis",1,0
+"284",90006,"Docetaxel plus ARSI",889,"Kidney failure",1,0
+"303",90006,"Docetaxel plus ARSI",813,"Neuropathy",0,1
+"322",90006,"Docetaxel plus ARSI",855,"Rash & pruritus",1,0
+"341",90006,"Docetaxel plus ARSI",890,"Seizures",1,0
+"360",90006,"Docetaxel plus ARSI",833,"Skeletally related events",1,0
+"379",90006,"Docetaxel plus ARSI",891,"Thromboembolism",1,0
+"398",90006,"Docetaxel plus ARSI",896,"Abnormal hepatic function",1,0
+"19",90007,"All Treatment",869,"Acute cardiac event",1,0
+"38",90007,"All Treatment",853,"Alopecia",0,1
+"57",90007,"All Treatment",870,"Bone marrow suppression",1,0
+"76",90007,"All Treatment",872,"Cerebral event",1,0
+"95",90007,"All Treatment",877,"Chronic heart failure including peripheral oedema",0,1
+"114",90007,"All Treatment",881,"Cognitive disturbance",1,0
+"133",90007,"All Treatment",883,"Diabetes",0,1
+"152",90007,"All Treatment",868,"Electrolyte imbalance",1,0
+"171",90007,"All Treatment",871,"Falls",1,0
+"190",90007,"All Treatment",874,"Fatigue",1,0
+"209",90007,"All Treatment",888,"GI toxicity",1,0
+"228",90007,"All Treatment",873,"Hospitalization",1,0
+"247",90007,"All Treatment",777,"Hypertension",0,1
+"266",90007,"All Treatment",887,"Sepsis",1,0
+"285",90007,"All Treatment",889,"Kidney failure",1,0
+"304",90007,"All Treatment",813,"Neuropathy",0,1
+"323",90007,"All Treatment",855,"Rash & pruritus",1,0
+"342",90007,"All Treatment",890,"Seizures",1,0
+"361",90007,"All Treatment",833,"Skeletally related events",1,0
+"380",90007,"All Treatment",891,"Thromboembolism",1,0
+"399",90007,"All Treatment",896,"Abnormal hepatic function",1,0

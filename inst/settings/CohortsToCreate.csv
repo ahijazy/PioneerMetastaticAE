@@ -1,0 +1,34 @@
+cohortId,cohort_name,group
+1040,T1_mHSPC ADT only treated (review v7.1),ADT main 
+1045,T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT),ADT sens
+1050,T2_mHSPC + ABI (sens 60 days),ARSI
+1052,T3_mHSPC + ENZ (sens 60 days),ARSI
+1055,T4_mHSPC + APA (sens 60 days),ARSI
+1063,T5_mHSPC + DAR (sens 60 days),ARSI
+1111, T6_mHSPC + Doce (review v7- sensitivity; end of observation),Docetaxel sens
+1015,T6_mHSPC + Doce (review v7),Docetaxel
+1057,T7_mHSPC + ABI + doce (sens 60 days),Docetaxel plus ARSI
+1059,T8_mHSPC + ENZ + doce (sens 60 days),Docetaxel plus ARSI
+1061,T9_mHSPC + APA+ doce (sens 60 days),Docetaxel plus ARSI
+1064,T10_mHSPC + DAR + doce (sens 60 days),Docetaxel plus ARSI
+869,Acute cardiac event,
+853,Alopecia,
+870,Bone marrow suppression,
+872,Cerebral event,
+877,Chronic heart failure including peripheral oedema,
+881,Cognitive disturbance,
+883,Diabetes,
+868,Electrolyte imbalance,
+871,Falls,
+874,Fatigue,
+888,GI toxicity,
+873,Hospitalization,
+777,Hypertension,
+887,Sepsis,
+889,Kidney failure,
+813,Neuropathy,
+855,Rash & pruritus,
+890,Seizures,
+833,Skeletally related events,
+891,Thromboembolism,
+896,Abnormal hepatic function,
