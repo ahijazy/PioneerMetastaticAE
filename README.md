@@ -1,6 +1,22 @@
 PioneerMetastaticAE
 ==============================
+<img src="https://img.shields.io/badge/Study%20Status-Results%20Available-yellow.svg" alt="Study Status: Results Available">
 
+- Analytics use case(s): **Characterization**
+- Study type: **Clinical Application**
+- Tags: **cancer**
+- Study lead: **Pawel Rajwa**
+- Study lead forums tag: **[bdemeulder](https://forums.ohdsi.org/u/bdemeulder)**
+- Study start date: **October 31, 2022**
+- Study end date: **-**
+- Protocol: **[Published research protocol](https://doi.org/10.1016/j.euros.2024.02.019)**
+- Publications: **-**
+- Results explorer: **[Shiny App: Characterization study](https://pioneer-shiny.hzdr.de/app/PioneerMetastaticAE)**
+- Results explorer: **[Shiny App: Incidence rates analysis](https://pioneer-shiny.hzdr.de/app/PioneerIncidenceRates)**
+
+The aim of this study is to characterize the metastatic Hormone-Sensitive Prostate Cancer (mHSPC) patients and the rates adverse events of systemic treatments they encounter.
+
+This study is undertaken by the 2023 prostate cancer studyathon of the [IMI PIONEER](https://prostate-pioneer.eu) project.
 
 Requirements
 ============
