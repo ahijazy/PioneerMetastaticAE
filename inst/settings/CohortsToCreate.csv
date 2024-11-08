@@ -2,10 +2,20 @@ cohortId,cohort_name,group
 1040,T1_mHSPC ADT only treated (review v7.1),ADT main 
 1045,T1_mHSPC ADT only treated (Sensitivity v7.1 all ADT),ADT sens
 1050,T2_mHSPC + ABI (sens 60 days),ARSI
+1269,T2_mHSPC + ABI (sens 60 days) Before 2018,ARSI- Before FDA approval
+1270,T2_mHSPC + ABI (sens 60 days) After 2018,ARSI- After FDA approval
 1052,T3_mHSPC + ENZ (sens 60 days),ARSI
+1272,T3_mHSPC + ENZ (sens 60 days) Before 2019,ARSI- Before FDA approval
+1271,T3_mHSPC + ENZ (sens 60 days) After 2019,ARSI- After FDA approval
 1055,T4_mHSPC + APA (sens 60 days),ARSI
+1273,T4_mHSPC + APA (sens 60 days) Before 2019,ARSI- Before FDA approval
+1274,T4_mHSPC + APA (sens 60 days) After 2019,ARSI- After FDA approval
 1063,T5_mHSPC + DAR (sens 60 days),ARSI
+1275,T5_mHSPC + DAR (sens 60 days) Before 2022,ARSI- Before FDA approval
+1276,T5_mHSPC + DAR (sens 60 days) After 2022,ARSI- After FDA approval
 1111, T6_mHSPC + Doce (review v7- sensitivity; end of observation),Docetaxel sens
+1286,T6_mHSPC + Doce (review v7- sensitivity; end of observation) Before 2015,Docetaxel- Before FDA approval
+1287,[PIONEER 3.0] T6_mHSPC + Doce (review v7- sensitivity; end of observation) After 2015,Docetaxel- After FDA approval
 1015,T6_mHSPC + Doce (review v7),Docetaxel
 1057,T7_mHSPC + ABI + doce (sens 60 days),Docetaxel plus ARSI
 1059,T8_mHSPC + ENZ + doce (sens 60 days),Docetaxel plus ARSI
